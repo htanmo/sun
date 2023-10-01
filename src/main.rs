@@ -158,7 +158,7 @@ fn main() {
                 let wind = json_response.wind.unwrap();
                 line = format!("Wind speed: {} m/s\nDegree: {} °\n", wind.speed, wind.deg);
                 if wind.gust.is_some() {
-                    let gust = format!("Gust: {}\n", wind.gust.unwrap());
+                    let gust = format!("Gust: {} m/s\n", wind.gust.unwrap());
                     line.push_str(&gust);
                 }
                 buffer.write(line.as_bytes()).unwrap();
