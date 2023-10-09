@@ -114,7 +114,6 @@ fn main() {
                     process::exit(1);
                 }
             };
-            // println!("{:#?}", data);
             let json_response: Weather = match serde_json::from_str(&data) {
                 Ok(w) => w,
                 Err(e) => {
@@ -135,8 +134,10 @@ fn main() {
             let mut line = format!("City: {}\n", json_response.name);
             buffer.write(line.as_bytes()).unwrap();
             line = format!(
-                "Latitude: {} °N\nLongitude: {} °E\n",
-                json_response.coord.lat, json_response.coord.lon
+                "Latitude: {} °N\nLongitude: {} °E\nTimezone: {}\n",
+                json_response.coord.lat,
+                json_response.coord.lon,
+                (json_response.timezone / 3600)
             );
             buffer.write(line.as_bytes()).unwrap();
             line = format!(
