@@ -6,7 +6,7 @@ Sun is a simple-to-use command line weather app written in Rust.
 
 ### Prerequisites
 
-Setup an environment variable named "WEATHER_API_KEY" containing your secret api key or use the .env file.
+Setup an environment variable named "WEATHER_API_KEY" containing your secret api key or use a .env file.
 
 ```sh
 WEATHER_API_KEY="your-unique-key"
